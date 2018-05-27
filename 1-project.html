@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    
+
+<head>
+    <title>Javascript Project</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script language="javascript">
+$(document).ready(function(){
+
+// Test 1
+function starleft(){
+	let doll = "*";
+		for(let i=0; i<4; i++){
+			console.log(doll);
+			doll += "*";
+		}
+}
+
+// Test 2
+function starleftreverse(){
+	let doll = "****";
+		for(let i=0; i<4; i++){
+			console.log(doll);
+			doll = doll.slice(0, -1);
+		}
+}
+
+// Test 3
+function starright(){
+	let doll = "*";
+	let spaces = "   ";
+		for(let i=0; i<4; i++){
+			console.log(spaces + doll);
+			doll += "*";
+			spaces = spaces.slice(0, -1);
+		}
+}
+
+// Test 4
+function startriangle(value){
+	let doll = "* ";
+	let spaces = "   ";
+		for(let i=0; i<value; i++){
+			console.log(spaces + doll);
+			doll += "* ";
+			spaces = spaces.slice(0, -1);
+		}
+}
+$("#btn").click(function(){
+	let values = $("#values").val();
+	startriangle(values);
+});
+});
+
+</script>
+</head>
+<body>
+	<label for="values">Triangle value</label>
+	<input type="number" id="values"> <input type="button" value="button" id="btn"> 
+</body>
+</html>
